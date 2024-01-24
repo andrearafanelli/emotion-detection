@@ -11,7 +11,7 @@ See the License for the specific language governing permissions and limitations 
 
 __author__ = 'Andrea Rafanelli'
 
-from dataset import GetDataset2
+from dataset import GetDataset
 from torch.utils.data import DataLoader, random_split
 import torch
 from torchvision import transforms
@@ -23,13 +23,18 @@ if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--mode', type=str, default='train', help='choose to train or test the model')
 
-    train = GetDataset2(root_dir='images/train/', train=True)
-    test = GetDataset2(root_dir='images/validation/', train=False)
+    train = GetDataset3(root_dir='images/train/', train=True)
+    test = GetDataset3(root_dir='images/validation/', train=False)
+
+    val_size = int(0.3 * len(train))
+
+    train, val = random_split(train, [len(train) - val_size, val_size])
 
     train_loader = DataLoader(train, batch_size=16, shuffle=True)
+    val_loader = DataLoader(val, batch_size=16, shuffle=False)
     test_loader = DataLoader(test, batch_size=16, shuffle=False)
 
-    experiment = RunExperiment('emotion', train_loader, test_loader)
+    experiment = RunExperiment('emotion', train_loader, val_loader)
 
     if args.mode == 'train':
         experiment.run()
