@@ -16,12 +16,13 @@ from train import Trainer, Tester
 from network import Model
 import copy
 import os
+import wandb
 
 
 class RunExperiment:
 
-    def __init__(self, name, train, test, num_epochs=200, learning_rate=1e-1,
-                 momentum=9e-1):
+    def __init__(self, name, train, test, num_epochs=200, learning_rate=1e-4,
+                 momentum=1e-5):
         self.train_loader = train
         self.test_loader = test
         self.best_model = None
@@ -35,18 +36,33 @@ class RunExperiment:
 
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
         self.model = Model().to(self.device)
-        self.optimizer = torch.optim.SGD(self.model.parameters(), lr=self.learning_rate, momentum=self.momentum)
+        self.optimizer = torch.optim.Adam(self.model.parameters(), lr=self.learning_rate, weight_decay=self.momentum)
+        self.scheduler = torch.optim.lr_scheduler.StepLR(self.optimizer, step_size=5, gamma=0.1)
+        # self.optimizer = torch.optim.SGD(self.model.parameters(), lr=self.learning_rate, momentum=self.momentum)
 
     def run(self):
+
+        wandb.login()
+        wandb.init(project='emotion-detection')
+        metrics_list = []
         os.makedirs(f"{os.getcwd()}/models/", exist_ok=True)
         torch.cuda.empty_cache()
         for epoch in range(self.num_epochs):
             print('*' * 40)
             print('Epoch {}/{}'.format(epoch, self.num_epochs - 1))
             print('*' * 40)
-            trainer = Trainer(self.model, self.optimizer, self.device)
+            trainer = Trainer(self.model, self.optimizer, self.scheduler, self.device)
             train_metrics = trainer.training(self.train_loader, 'Train')
             test_metrics = trainer.testing(self.test_loader, 'Test')
+            epoch_metrics = {'Train Loss': train_metrics['Loss'], 'Train Accuracy': train_metrics['Accuracy'],
+                             'Train F1': train_metrics['F1'], 'Train Precision': train_metrics['Precision'],
+                             'Train Recall': train_metrics['Recall'],
+                             'Test Loss': test_metrics['Loss'], 'Test Accuracy': test_metrics['Accuracy'],
+                             'Test F1': test_metrics['F1'], 'Test Precision': test_metrics['Precision'],
+                             'Test Recall': test_metrics['Recall']
+                             }
+            wandb.log(epoch_metrics)
+            metrics_list.append(epoch_metrics)
 
             if (test_metrics['Accuracy'] >= self.best_acc) and (test_metrics['Loss'] <= self.best_loss):
                 self.best_acc = test_metrics['Accuracy']
@@ -56,6 +72,9 @@ class RunExperiment:
                 print(f'Best Accuracy: {self.best_acc:.4f} Epoch: {epoch + 1}')
                 print(">>>>> Saving model..")
                 torch.save(self.best_model, f"{os.getcwd()}/models/{self.name}.pt")
+
+        metrics_df = pd.DataFrame(metrics_list)
+        metrics_df.to_csv('experiment_metrics.csv', index=False)
 
     def load_best_model(self):
         self.model.load_state_dict(torch.load(f"{os.getcwd()}/models/{self.expName}.pt"))

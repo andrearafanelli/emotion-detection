@@ -23,19 +23,18 @@ from metrics import MetricsCalculator
 
 class Trainer:
 
-    def __init__(self, model, optimizer, device):
+    def __init__(self, model, optimizer, scheduler, device):
 
         self.metrics_calculator = None
         self.model = model
         self.optimizer = optimizer
+        self.scheduler = scheduler
         self.device = device
-        self.metrics = defaultdict(float)
-        self.loss_function = LossCalculator()
 
     def training(self, dataloaders, set_name):
-        self.metrics.clear()
+        self.metrics = defaultdict(float)
         epoch_samples = 0
-        criterion = torch.nn.CrossEntropyLoss(reduction='mean')
+        criterion = torch.nn.CrossEntropyLoss()
         self.model.train()
 
         for batch_idx, (inputs, targets) in enumerate(tqdm(dataloaders)):
@@ -50,6 +49,7 @@ class Trainer:
                 self.metrics = self.metrics_calculator.calculate_metrics(self.metrics)
                 loss.backward()
                 self.optimizer.step()
+                self.scheduler.step()
 
             epoch_samples += inputs.size(0)
 
@@ -58,8 +58,8 @@ class Trainer:
         return self.metrics
 
     def testing(self, dataloaders, set_name):
-        self.metrics.clear()
-        criterion = torch.nn.CrossEntropyLoss(reduction='mean')
+        self.metrics = defaultdict(float)
+        criterion = torch.nn.CrossEntropyLoss()
         epoch_samples = 0
         self.model.eval()
         with torch.no_grad():
@@ -77,74 +77,3 @@ class Trainer:
         return self.metrics
 
 
-class Tester:
-    """Initialize the tester with the model, optimizer, device,
-     batch, valid_path, metrics, metrics_calculator, and loss_function"""
-
-    def __init__(self, model, optimizer, device):
-        self.model = model
-        self.optimizer = optimizer
-        self.device = device
-        self.batch = 32
-        self.metrics_calculator = MetricsCalculator()
-        self.loss_function = LossCalculator()
-        self.metrics = defaultdict(float)
-
-    def testing(self, dataloaders, set_name):
-        """Test the model on the provided data loader,
-        save the output masks, and update the metrics dictionary"""
-        self.metrics.clear()
-        self.model.eval()
-        epoch_samples = 0
-
-        for index, inputs, labels in tqdm(dataloaders):
-            inputs = inputs.to(self.device)
-            labels = labels.to(self.device)
-
-            with torch.no_grad():
-                outputs = self.model(inputs)
-                preds = torch.sigmoid(outputs)
-                preds = preds.data.cpu().numpy()
-                loss = self.loss_function(outputs, labels, self.metrics)
-                epoch_samples += inputs.size(0)
-
-        self.metrics_calculator._update_metrics(self.metrics, epoch_samples, set_name)
-
-        return self.metrics
-
-
-class LossCalculator:
-
-    def __init__(self, bce_weight=0.35):
-        self.bce_weight = bce_weight
-
-    def __call__(self, y_pred, y_true, metrics):
-        loss = torch.nn.CrossEntropyLoss(reduction='mean')
-        loss = loss(y_pred, y_true)
-
-        metrics = defaultdict(float)
-        calculator = MetricsCalculator(y_true, y_pred)
-
-        metrics['Loss'] += loss * y_true.size(0)
-        metrics['Accuracy'] += calculator.calculate_accuracy() * y_true.size(0)
-        metrics['F1'] += calculator.calculate_f1_score() * y_true.size(0)
-        metrics['Precision'] += calculator.calculate_precision() * y_true.size(0)
-        metrics['Recall'] += calculator.calculate_recall() * y_true.size(0)
-
-        pred_prob = F.softmax(pred, dim=1)
-
-        target_np = target.data.cpu().numpy()
-        pred_np = pred.data.cpu().numpy()
-
-        MIoU = np.mean(
-            jaccard_score(np.argmax(target_np, axis=1).flatten(), np.argmax(pred_np, axis=1).flatten(), average=None))
-        accuracy = accuracy_score(np.argmax(target_np, axis=1).flatten(), np.argmax(pred_np, axis=1).flatten())
-        self._update_metrics(metrics, target.size(0), bce, dice, loss, accuracy, MIoU)
-        return loss
-
-    def _update_metrics(self, metrics, batch_size, bce, dice, loss, accuracy, MIoU):
-        metrics['Bce'] += bce.data.cpu().numpy() * batch_size
-        metrics['Dice'] += dice.data.cpu().numpy() * batch_size
-        metrics['Loss'] += loss.data.cpu().numpy() * batch_size
-        metrics['Accuracy'] += accuracy * batch_size
-        metrics['MIoU'] += MIoU * batch_size
