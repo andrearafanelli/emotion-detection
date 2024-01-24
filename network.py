@@ -20,12 +20,15 @@ class Model(nn.Module):
     def __init__(self, num_classes=7):
         super(Model, self).__init__()
         model = models.mobilenet_v2(pretrained=True)
+        model.features[0][0] = nn.Conv2d(1, 32, kernel_size=3, stride=2, padding=1, bias=False)
         self.features = model.features
         self.global_avg_pooling = nn.AdaptiveAvgPool2d(1)
         self.dense1 = nn.Linear(1280, 512)
         self.relu1 = nn.ReLU(inplace=True)
+        self.dropout1 = nn.Dropout(0.25)
         self.dense2 = nn.Linear(512, 256)
         self.relu2 = nn.ReLU(inplace=True)
+        self.dropout2 = nn.Dropout(0.25)
         self.dense3 = nn.Linear(256, num_classes)
 
     def forward(self, x):
@@ -34,7 +37,9 @@ class Model(nn.Module):
         x = x.view(x.size(0), -1)
         x = self.dense1(x)
         x = self.relu1(x)
+        x = self.dropout1(x)
         x = self.dense2(x)
         x = self.relu2(x)
+        x = self.dropout2(x)
         x = self.dense3(x)
         return x
