@@ -12,52 +12,58 @@ See the License for the specific language governing permissions and limitations 
 __author__ = 'Andrea Rafanelli'
 
 import torch
-from torch.utils.data import Dataset
-from torchvision import transforms
-from PIL import Image
+from torch.utils.data import DataLoader, Dataset
+from torchvision import transforms, datasets
 import os
-import cv2
-import numpy as np
 
 
 class GetDataset(Dataset):
-    def __init__(self, root_dir, train=True):
+    def __init__(self, root_dir, batch_size, num_workers):
         self.root_dir = root_dir
-        self.train = train
-        self.classes = sorted(os.listdir(root_dir))
-        self.class_to_idx = {cls: idx for idx, cls in enumerate(self.classes)}
-        self.image_paths = self._load_image_paths()
-        self.transform = self._get_transform()
+        self.batch_size = batch_size
+        self.num_workers = num_workers
 
-    def _load_image_paths(self):
-        image_paths = []
-        for cls in self.classes:
-            class_folder = os.path.join(self.root_dir, cls)
-            if os.path.isdir(class_folder):
-                class_images = [os.path.join(class_folder, img) for img in os.listdir(class_folder)]
-                image_paths.extend(class_images)
-        return image_paths
+        normalize = transforms.Normalize(
+            mean=[0.5752, 0.4495, 0.4012],
+            std=[0.2086, 0.1911, 0.1827]
+        )
 
-    @staticmethod
-    def _get_transform():
-
-        return transforms.Compose([
-            transforms.Grayscale(num_output_channels=1),
-            transforms.Resize((48, 48)),
+        train_transform = transforms.Compose([
+            transforms.Resize(256),
+            transforms.RandomRotation(15),
+            transforms.RandomHorizontalFlip(),
             transforms.ToTensor(),
-            transforms.Normalize((0.5,), (0.5,))
+            normalize
         ])
 
-    def __len__(self):
-        return len(self.image_paths)
+        val_transform = transforms.Compose([
+            transforms.Resize(256),
+            transforms.CenterCrop(224),
+            transforms.ToTensor(),
+            normalize
+        ])
 
-    def __getitem__(self, idx):
-        img_path = self.image_paths[idx]
-        image = Image.open(img_path)
-        target_class = os.path.basename(os.path.dirname(img_path))
-        target = self.class_to_idx[target_class]
+        self.train_set = datasets.ImageFolder(
+            root=os.path.join(self.root_dir, 'train'),
+            transform=train_transform
+        )
 
-        if self.transform:
-            image = self.transform(image)
+        self.val_set = datasets.ImageFolder(
+            root=os.path.join(self.root_dir, 'test'),
+            transform=val_transform
+        )
 
-        return image, target
+    def get_data_loaders(self, shuffle_train=True):
+        train_loader = DataLoader(
+            self.train_set, batch_size=self.batch_size, shuffle=shuffle_train,
+            num_workers=self.num_workers, pin_memory=True
+        )
+
+        val_loader = DataLoader(
+            self.val_set, batch_size=self.batch_size, shuffle=False,
+            num_workers=self.num_workers, pin_memory=True
+        )
+
+        return train_loader, val_loader
+
+
