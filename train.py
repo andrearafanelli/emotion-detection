@@ -18,62 +18,66 @@ import torch.nn.functional as F
 import sklearn
 from collections import defaultdict
 from tqdm.auto import tqdm
-from metrics import MetricsCalculator
+from metrics import MetricsCalculator, Metrics, calculate_accuracy, Score
 
 
 class Trainer:
 
-    def __init__(self, model, optimizer, scheduler, device):
+    def __init__(self, model, optimizer, device):
 
+        self.accuracy = None
+        self.loss = None
         self.metrics_calculator = None
         self.model = model
         self.optimizer = optimizer
-        self.scheduler = scheduler
         self.device = device
 
     def training(self, dataloaders, set_name):
-        self.metrics = defaultdict(float)
-        epoch_samples = 0
+        self.accuracy, self.loss, self.metrics_calculator = Metrics(), Metrics(), Score()
         criterion = torch.nn.CrossEntropyLoss()
+
         self.model.train()
 
         for batch_idx, (inputs, targets) in enumerate(tqdm(dataloaders)):
             inputs = inputs.to(self.device)
-            targets = torch.LongTensor(targets).to(self.device)
+            targets = targets.to(self.device)
+
+            outputs = self.model(inputs)
+            loss = criterion(outputs, targets)
+
+            accuracy = calculate_accuracy(outputs, targets)
+
+            self.accuracy.average(accuracy, inputs)
+            self.loss.average(loss, inputs)
+            self.metrics_calculator.collect(targets, outputs)
+
             self.optimizer.zero_grad()
+            loss.backward()
+            self.optimizer.step()
 
-            with torch.set_grad_enabled(True):
-                outputs = self.model(inputs)
-                loss = criterion(outputs, targets)
-                self.metrics_calculator = MetricsCalculator(targets, outputs, loss)
-                self.metrics = self.metrics_calculator.calculate_metrics(self.metrics)
-                loss.backward()
-                self.optimizer.step()
-                self.scheduler.step()
-
-            epoch_samples += inputs.size(0)
-
-        self.metrics_calculator._update_metrics(self.metrics, epoch_samples, set_name)
-
-        return self.metrics
+        return self.metrics_calculator.calculate(self.accuracy.avg, self.loss.avg, set_name)
 
     def testing(self, dataloaders, set_name):
-        self.metrics = defaultdict(float)
+        self.accuracy, self.loss, self.metrics_calculator = Metrics(), Metrics(), Score()
         criterion = torch.nn.CrossEntropyLoss()
-        epoch_samples = 0
+
         self.model.eval()
+
         with torch.no_grad():
             for batch_idx, (inputs, targets) in enumerate(tqdm(dataloaders)):
                 inputs = inputs.to(self.device)
-                targets = torch.LongTensor(targets).to(self.device)
+                targets = targets.to(self.device)
+
                 outputs = self.model(inputs)
                 loss = criterion(outputs, targets)
-                self.metrics_calculator = MetricsCalculator(targets, outputs, loss)
-                self.metrics = self.metrics_calculator.calculate_metrics(self.metrics)
-                epoch_samples += inputs.size(0)
 
-        self.metrics_calculator._update_metrics(self.metrics, epoch_samples, set_name)
+                accuracy = calculate_accuracy(outputs, targets)
 
-        return self.metrics
+                self.accuracy.average(accuracy, inputs)
+                self.loss.average(loss, inputs)
+                self.metrics_calculator.collect(targets, outputs)
+
+        return self.metrics_calculator.calculate(self.accuracy.avg, self.loss.avg, set_name)
+
 
 
