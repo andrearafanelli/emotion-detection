@@ -12,41 +12,56 @@ See the License for the specific language governing permissions and limitations 
 __author__ = 'Andrea Rafanelli'
 
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score
+from sklearn.utils.multiclass import unique_labels
 import torch
 
 
-class MetricsCalculator:
-    def __init__(self, y_true, y_pred, loss):
-        self.y_true = y_true.data.cpu().numpy()
-        self.y_pred = torch.argmax(y_pred, axis=1).data.cpu().numpy()
-        self.loss = loss
+def calculate_accuracy(predictions, targets):
+    with torch.no_grad():
+        batch_size = targets.size(0)
+        predicted_labels = torch.argmax(predictions, dim=1)
+        correct_predictions = predicted_labels.eq(targets)
+        accuracy = correct_predictions.float().sum().mul_(1.0 / batch_size)
 
-    def calculate_accuracy(self):
-        return accuracy_score(self.y_true, self.y_pred)
+    return accuracy
 
-    def calculate_precision(self, average='macro'):
-        return precision_score(self.y_true, self.y_pred, average=average, zero_division=1.0)
 
-    def calculate_recall(self, average='macro'):
-        return recall_score(self.y_true, self.y_pred, average=average, zero_division=1.0)
+class Metrics:
+    def __init__(self):
+        self.avg, self.sum, self.count = 0, 0, 0
 
-    def calculate_f1_score(self, average='macro'):
-        return f1_score(self.y_true, self.y_pred, average=average, zero_division=1.0)
+    def average(self, metric, input):
+        sample = input.size(0)
+        self.sum += metric.item() * sample
+        self.count += sample
+        if self.count != 0:
+            self.avg = self.sum / self.count
 
-    def calculate_metrics(self, metrics):
-        batch_size = self.y_true.shape[0]
-        metrics['Loss'] += self.loss * batch_size
-        metrics['Accuracy'] += self.calculate_accuracy() * batch_size
-        metrics['F1'] += self.calculate_f1_score() * batch_size
-        metrics['Precision'] += self.calculate_precision() * batch_size
-        metrics['Recall'] += self.calculate_recall() * batch_size
+
+class Score:
+    def __init__(self):
+        self.y_true = []
+        self.y_pred = []
+
+    def collect(self, y_true_batch, y_pred_batch):
+        self.y_true.append(y_true_batch)
+        self.y_pred.append(torch.argmax(y_pred_batch, dim=1))
+
+    def calculate(self, accuracy, loss, phase):
+        metrics = {}
+        y_pred = torch.cat(self.y_pred).cpu().numpy()
+        y_true = torch.cat(self.y_true).cpu().numpy()
+        labels = unique_labels(y_true, y_pred)
+
+        metrics['Accuracy'] = accuracy
+        metrics['Loss'] = loss
+        metrics['Recall'] = recall_score(y_true, y_pred, average='macro')
+        metrics['Precision'] = precision_score(y_true, y_pred, average='macro')
+        f1_scores = f1_score(y_true, y_pred, average=None, labels=labels)
+        metrics['F1'] = f1_scores.sum() / labels.shape[0]
+
+        self.print_metrics(metrics, phase)
         return metrics
-
-    def _update_metrics(self, metrics, epoch_samples, set_name):
-        for metric in ['Loss', 'Accuracy', 'F1', 'Precision', 'Recall']:
-            metrics[metric] /= epoch_samples
-
-        self.print_metrics(metrics, set_name)
 
     @staticmethod
     def print_metrics(metrics, phase):
@@ -55,27 +70,3 @@ class MetricsCalculator:
             outputs.append("{}: {:4f}".format(k, metrics[k]))
         print("{}: {}".format(phase, ", ".join(outputs)))
 
-
-# Example of how to use the EmotionMetrics class
-if __name__ == "__main__":
-    # Example data (replace with your actual data)
-    y_true = [1, 0, 1, 0, 1, 1, 0, 0, 1, 0]
-    y_pred = [1, 1, 1, 0, 0, 0, 0, 0, 1, 0]
-    y_pred_prob = [0.8, 0.3, 0.6, 0.2, 0.7, 0.9, 0.4, 0.1, 0.75, 0.25]
-
-    # Instantiate the EmotionMetrics class
-    emotion_metrics = MetricsCalculator(y_true, y_pred_prob, y_pred)
-
-    # Calculate and print various metrics
-    print(f'Accuracy: {emotion_metrics.calculate_accuracy()}')
-    print(f'Precision: {emotion_metrics.calculate_precision()}')
-    print(f'Recall: {emotion_metrics.calculate_recall()}')
-    print(f'F1 Score: {emotion_metrics.calculate_f1_score()}')
-    print(f'Confusion Matrix:\n{emotion_metrics.calculate_confusion_matrix()}')
-    print(f'AUC: {emotion_metrics.calculate_auc()}')
-    print(f'Mean Absolute Error: {emotion_metrics.calculate_mean_absolute_error()}')
-    print(f'Mean Squared Error: {emotion_metrics.calculate_mean_squared_error()}')
-    print(f'Intersection over Union (IoU): {emotion_metrics.calculate_iou()}')
-
-    # Plot ROC Curve
-    emotion_metrics.plot_roc_curve()
