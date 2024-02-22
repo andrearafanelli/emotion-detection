@@ -11,7 +11,6 @@ See the License for the specific language governing permissions and limitations 
 
 __author__ = 'Andrea Rafanelli'
 
-import torch
 from torch.utils.data import DataLoader, Dataset
 from torchvision import transforms, datasets
 import os
@@ -30,6 +29,7 @@ class GetDataset(Dataset):
 
         train_transform = transforms.Compose([
             transforms.Resize(256),
+            transforms.RandomCrop(224),
             transforms.RandomRotation(15),
             transforms.RandomHorizontalFlip(),
             transforms.ToTensor(),
