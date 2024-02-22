@@ -1,0 +1,12 @@
+Traceback (most recent call last):
+  File "/snap/pycharm-community/364/plugins/python-ce/helpers/pydev/pydevd.py", line 1534, in _exec
+    pydev_imports.execfile(file, globals, locals)  # execute the script
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/snap/pycharm-community/364/plugins/python-ce/helpers/pydev/_pydev_imps/_pydev_execfile.py", line 18, in execfile
+    exec(compile(contents+"\n", file, 'exec'), glob, loc)
+  File "/home/arafanelli/PycharmProjects/emoDetection/emotion-detection/main.py", line 36, in <module>
+    experiment.run()
+  File "/home/arafanelli/PycharmProjects/emoDetection/emotion-detection/run.py", line 51, in run
+    start = time.time()
+            ^^^^
+NameError: name 'time' is not defined

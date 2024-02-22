@@ -55,8 +55,8 @@ class Score:
 
         metrics['Accuracy'] = accuracy
         metrics['Loss'] = loss
-        metrics['Recall'] = recall_score(y_true, y_pred, average='macro')
-        metrics['Precision'] = precision_score(y_true, y_pred, average='macro')
+        metrics['Recall'] = recall_score(y_true, y_pred, average='macro', zero_division=1.0)
+        metrics['Precision'] = precision_score(y_true, y_pred, average='macro', zero_division=1.0)
         f1_scores = f1_score(y_true, y_pred, average=None, labels=labels)
         metrics['F1'] = f1_scores.sum() / labels.shape[0]
 

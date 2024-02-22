@@ -1,0 +1,82 @@
+****************************************
+Epoch 0/49
+****************************************
+
+
+
+
+
+
+
+
+
+
+
+ 93%|██████████████████████████████████████▏  | 179/192 [00:27<00:01,  8.72it/s]
+100%|█████████████████████████████████████████| 192/192 [00:29<00:00,  6.58it/s]
+
+ 59%|█████████████████████████▎                 | 23/39 [00:02<00:01, 12.72it/s]
+Test: Accuracy: 0.397718, Loss: 1.568891, Recall: 0.167038, Precision: 0.146524, F1: 0.133677
+Best Accuracy: 0.3977 Epoch: 1
+>>>>> Saving model..
+****************************************
+Epoch 1/49
+100%|███████████████████████████████████████████| 39/39 [00:03<00:00, 10.89it/s]
+/home/arafanelli/miniconda3/envs/emoDetection/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1497: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+
+
+
+
+
+
+
+
+
+
+ 96%|███████████████████████████████████████▌ | 185/192 [00:22<00:00,  8.36it/s]
+100%|█████████████████████████████████████████| 192/192 [00:23<00:00,  8.21it/s]
+/home/arafanelli/miniconda3/envs/emoDetection/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1497: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+
+
+ 92%|███████████████████████████████████████▋   | 36/39 [00:03<00:00, 14.88it/s]
+Test: Accuracy: 0.396496, Loss: 1.562261, Recall: 0.159673, Precision: 0.233558, F1: 0.117694
+****************************************
+Epoch 2/49
+100%|███████████████████████████████████████████| 39/39 [00:03<00:00, 11.39it/s]
+/home/arafanelli/miniconda3/envs/emoDetection/lib/python3.11/site-packages/sklearn/metrics/_classification.py:1497: UndefinedMetricWarning: Precision is ill-defined and being set to 0.0 in labels with no predicted samples. Use `zero_division` parameter to control this behavior.
+  _warn_prf(average, modifier, f"{metric.capitalize()} is", len(result))
+ 10%|████▍                                     | 20/192 [00:03<00:30,  5.60it/s]
+Traceback (most recent call last):
+  File "/home/arafanelli/PycharmProjects/emoDetection/emotion-detection/main.py", line 34, in <module>
+    experiment.run()
+  File "/home/arafanelli/PycharmProjects/emoDetection/emotion-detection/run.py", line 56, in run
+    train_metrics = trainer.training(self.train_loader, 'Train')
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arafanelli/PycharmProjects/emoDetection/emotion-detection/train.py", line 45, in training
+    outputs = self.model(inputs)
+              ^^^^^^^^^^^^^^^^^^
+  File "/home/arafanelli/miniconda3/envs/emoDetection/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1518, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arafanelli/miniconda3/envs/emoDetection/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1527, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arafanelli/miniconda3/envs/emoDetection/lib/python3.11/site-packages/torch/nn/parallel/data_parallel.py", line 185, in forward
+    outputs = self.parallel_apply(replicas, inputs, module_kwargs)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arafanelli/miniconda3/envs/emoDetection/lib/python3.11/site-packages/torch/nn/parallel/data_parallel.py", line 200, in parallel_apply
+    return parallel_apply(replicas, inputs, kwargs, self.device_ids[:len(replicas)])
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arafanelli/miniconda3/envs/emoDetection/lib/python3.11/site-packages/torch/nn/parallel/parallel_apply.py", line 100, in parallel_apply
+    thread.start()
+  File "/home/arafanelli/miniconda3/envs/emoDetection/lib/python3.11/threading.py", line 969, in start
+    self._started.wait()
+  File "/home/arafanelli/miniconda3/envs/emoDetection/lib/python3.11/threading.py", line 629, in wait
+    signaled = self._cond.wait(timeout)
+               ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/arafanelli/miniconda3/envs/emoDetection/lib/python3.11/threading.py", line 327, in wait
+    waiter.acquire()
+KeyboardInterrupt

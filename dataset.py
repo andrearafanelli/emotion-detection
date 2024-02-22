@@ -11,16 +11,16 @@ See the License for the specific language governing permissions and limitations 
 
 __author__ = 'Andrea Rafanelli'
 
-from torch.utils.data import DataLoader, Dataset
+from torch.utils.data import DataLoader, Dataset, random_split
 from torchvision import transforms, datasets
 import os
 
 
 class GetDataset(Dataset):
-    def __init__(self, root_dir, batch_size, num_workers):
-        self.root_dir = root_dir
-        self.batch_size = batch_size
-        self.num_workers = num_workers
+    def __init__(self, configuration):
+        self.root_dir = configuration['root_dir']
+        self.batch_size = configuration['batch_size']
+        self.num_workers = configuration['num_workers']
 
         normalize = transforms.Normalize(
             mean=[0.5752, 0.4495, 0.4012],
@@ -53,6 +53,11 @@ class GetDataset(Dataset):
             transform=val_transform
         )
 
+        val_size = int(0.8 * len(self.val_set))
+        test_size = len(self.val_set) - val_size
+
+        self.val_set, self.test_set = random_split(self.val_set, [val_size, test_size])
+
     def get_data_loaders(self, shuffle_train=True):
         train_loader = DataLoader(
             self.train_set, batch_size=self.batch_size, shuffle=shuffle_train,
@@ -64,6 +69,11 @@ class GetDataset(Dataset):
             num_workers=self.num_workers, pin_memory=True
         )
 
-        return train_loader, val_loader
+        test_loader = DataLoader(
+            self.test_set, batch_size=self.batch_size, shuffle=False,
+            num_workers=self.num_workers, pin_memory=True
+        )
+
+        return train_loader, val_loader, test_loader
 
 

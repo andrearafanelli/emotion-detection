@@ -1,0 +1,672 @@
+2024-02-20 17:35:32,560 INFO    StreamThr :192754 [internal.py:wandb_internal():86] W&B internal server running at pid: 192754, started at: 2024-02-20 17:35:32.559142
+2024-02-20 17:35:32,562 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status
+2024-02-20 17:35:32,565 INFO    WriterThread:192754 [datastore.py:open_for_write():87] open: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/run-ovsdtgqh.wandb
+2024-02-20 17:35:32,567 DEBUG   SenderThread:192754 [sender.py:send():382] send: header
+2024-02-20 17:35:32,571 DEBUG   SenderThread:192754 [sender.py:send():382] send: run
+2024-02-20 17:35:33,114 INFO    SenderThread:192754 [dir_watcher.py:__init__():211] watching files in: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files
+2024-02-20 17:35:33,114 INFO    SenderThread:192754 [sender.py:_start_run_threads():1136] run started: ovsdtgqh with start time 1708446932.559177
+2024-02-20 17:35:33,145 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: check_version
+2024-02-20 17:35:33,146 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: check_version
+2024-02-20 17:35:33,278 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: run_start
+2024-02-20 17:35:33,284 DEBUG   HandlerThread:192754 [system_info.py:__init__():27] System info init
+2024-02-20 17:35:33,285 DEBUG   HandlerThread:192754 [system_info.py:__init__():42] System info init done
+2024-02-20 17:35:33,285 INFO    HandlerThread:192754 [system_monitor.py:start():194] Starting system monitor
+2024-02-20 17:35:33,285 INFO    SystemMonitor:192754 [system_monitor.py:_start():158] Starting system asset monitoring threads
+2024-02-20 17:35:33,285 INFO    HandlerThread:192754 [system_monitor.py:probe():214] Collecting system info
+2024-02-20 17:35:33,286 INFO    SystemMonitor:192754 [interfaces.py:start():190] Started cpu monitoring
+2024-02-20 17:35:33,287 INFO    SystemMonitor:192754 [interfaces.py:start():190] Started disk monitoring
+2024-02-20 17:35:33,289 INFO    SystemMonitor:192754 [interfaces.py:start():190] Started gpu monitoring
+2024-02-20 17:35:33,290 INFO    SystemMonitor:192754 [interfaces.py:start():190] Started memory monitoring
+2024-02-20 17:35:33,292 INFO    SystemMonitor:192754 [interfaces.py:start():190] Started network monitoring
+2024-02-20 17:35:33,318 DEBUG   HandlerThread:192754 [system_info.py:probe():151] Probing system
+2024-02-20 17:35:33,321 DEBUG   HandlerThread:192754 [system_info.py:_probe_git():136] Probing git
+2024-02-20 17:35:33,332 DEBUG   HandlerThread:192754 [system_info.py:_probe_git():144] Probing git done
+2024-02-20 17:35:33,332 DEBUG   HandlerThread:192754 [system_info.py:probe():199] Probing system done
+2024-02-20 17:35:33,332 DEBUG   HandlerThread:192754 [system_monitor.py:probe():223] {'os': 'Linux-6.5.0-17-generic-x86_64-with-glibc2.35', 'python': '3.11.2', 'heartbeatAt': '2024-02-20T16:35:33.318421', 'startedAt': '2024-02-20T16:35:32.552052', 'docker': None, 'cuda': None, 'args': (), 'state': 'running', 'program': '/home/arafanelli/PycharmProjects/emoDetection/emotion-detection/main.py', 'codePathLocal': 'main.py', 'codePath': 'main.py', 'git': {'remote': 'https://github.com/andrearafanelli/emotion-detection.git', 'commit': '327d89b751796003104a6ceb2b2833aa86630dba'}, 'email': 'andrea.rafanelli96@gmail.com', 'root': '/home/arafanelli/PycharmProjects/emoDetection/emotion-detection', 'host': 'boncioli', 'username': 'arafanelli', 'executable': '/home/arafanelli/PycharmProjects/emoDetection/.venv/bin/python', 'cpu_count': 14, 'cpu_count_logical': 28, 'cpu_freq': {'current': 1200.259785714286, 'min': 1200.0, 'max': 4642.857142857143}, 'cpu_freq_per_core': [{'current': 1200.0, 'min': 1200.0, 'max': 4600.0}, {'current': 1200.021, 'min': 1200.0, 'max': 4600.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4600.0}, {'current': 1201.047, 'min': 1200.0, 'max': 4700.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4600.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4600.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4600.0}, {'current': 1200.185, 'min': 1200.0, 'max': 4600.0}, {'current': 1200.189, 'min': 1200.0, 'max': 4600.0}, {'current': 1199.989, 'min': 1200.0, 'max': 4800.0}, {'current': 1200.099, 'min': 1200.0, 'max': 4600.0}, {'current': 1200.065, 'min': 1200.0, 'max': 4600.0}, {'current': 1200.016, 'min': 1200.0, 'max': 4800.0}, {'current': 1200.199, 'min': 1200.0, 'max': 4700.0}, {'current': 1200.149, 'min': 1200.0, 'max': 4600.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4600.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4600.0}, {'current': 1199.837, 'min': 1200.0, 'max': 4700.0}, {'current': 1200.066, 'min': 1200.0, 'max': 4600.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4600.0}, {'current': 1200.266, 'min': 1200.0, 'max': 4600.0}, {'current': 1200.049, 'min': 1200.0, 'max': 4600.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4600.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4800.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4600.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4600.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4800.0}, {'current': 1200.0, 'min': 1200.0, 'max': 4700.0}], 'disk': {'/': {'total': 3665.956069946289, 'used': 854.0670127868652}}, 'gpu': 'Quadro RTX 4000', 'gpu_count': 2, 'gpu_devices': [{'name': 'Quadro RTX 4000', 'memory_total': 8370061312}, {'name': 'Quadro RTX 4000', 'memory_total': 8361279488}], 'memory': {'total': 125.47242736816406}}
+2024-02-20 17:35:33,333 INFO    HandlerThread:192754 [system_monitor.py:probe():224] Finished collecting system info
+2024-02-20 17:35:33,333 INFO    HandlerThread:192754 [system_monitor.py:probe():227] Publishing system info
+2024-02-20 17:35:33,334 INFO    HandlerThread:192754 [system_monitor.py:probe():229] Finished publishing system info
+2024-02-20 17:35:33,343 DEBUG   SenderThread:192754 [sender.py:send():382] send: files
+2024-02-20 17:35:33,343 INFO    SenderThread:192754 [sender.py:_save_file():1403] saving file wandb-metadata.json with policy now
+2024-02-20 17:35:33,360 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: python_packages
+2024-02-20 17:35:33,361 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: python_packages
+2024-02-20 17:35:33,362 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:35:33,362 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:35:33,366 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:35:33,630 DEBUG   SenderThread:192754 [sender.py:send():382] send: telemetry
+2024-02-20 17:35:34,004 INFO    wandb-upload_0:192754 [upload_job.py:push():131] Uploaded file /tmp/tmp2buchyv1wandb/ico0qhac-wandb-metadata.json
+2024-02-20 17:35:34,115 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_created():271] file/dir created: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/requirements.txt
+2024-02-20 17:35:34,115 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_created():271] file/dir created: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/wandb-metadata.json
+2024-02-20 17:35:34,115 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_created():271] file/dir created: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:35:36,115 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:35:37,711 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:35:38,116 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:35:40,116 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:35:42,117 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:35:43,358 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:35:44,118 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:35:46,119 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:35:48,120 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:35:48,362 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:35:48,362 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:35:48,365 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:35:48,598 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:35:50,121 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:35:52,122 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:35:54,122 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:35:54,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:35:56,123 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:35:58,124 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:35:59,773 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:36:00,125 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:02,126 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:03,362 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:36:03,363 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:36:03,366 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:36:04,127 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:05,233 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:36:06,127 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/config.yaml
+2024-02-20 17:36:06,128 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:08,128 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:10,130 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:10,642 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:36:12,131 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:14,132 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:15,922 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:36:16,133 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:18,134 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:18,363 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:36:18,363 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:36:18,368 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:36:20,135 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:21,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:36:22,136 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:24,137 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:26,138 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:26,787 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:36:28,139 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:30,140 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:32,038 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:36:32,140 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:33,292 DEBUG   SystemMonitor:192754 [system_monitor.py:_start():172] Starting system metrics aggregation loop
+2024-02-20 17:36:33,293 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:36:33,363 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:36:33,363 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:36:33,365 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:36:34,141 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:36,143 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:37,352 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:36:38,144 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:40,144 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:42,145 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:42,627 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:36:44,146 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:46,147 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:47,884 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:36:48,148 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:48,363 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:36:48,363 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:36:48,365 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:36:50,149 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:52,149 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:53,206 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:36:54,150 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:56,152 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:58,153 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:36:58,603 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:37:00,153 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:02,154 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:03,294 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:37:03,362 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:37:03,363 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:37:03,365 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:37:04,155 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:04,312 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:37:06,155 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:08,156 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:09,633 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:37:10,157 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:12,158 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:14,158 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:14,847 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:37:16,159 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:18,160 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:18,365 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:37:18,366 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:37:18,367 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:37:20,074 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:37:20,161 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:22,162 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:24,163 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:25,423 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:37:26,163 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:28,164 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:30,165 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:30,454 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:37:32,165 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:33,295 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:37:33,364 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:37:33,364 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:37:33,367 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:37:34,167 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:35,825 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:37:36,168 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:38,168 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:40,169 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:41,073 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:37:42,170 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:44,171 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:46,172 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:46,339 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:37:48,173 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:48,363 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:37:48,364 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:37:48,367 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:37:50,174 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:51,633 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:37:52,175 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:54,175 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:56,177 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:37:56,944 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:37:58,178 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:00,178 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:02,179 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:02,193 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:38:03,296 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:38:03,363 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:38:03,364 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:38:03,366 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:38:04,180 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:06,182 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:07,548 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:38:08,182 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:10,183 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:12,184 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:12,830 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:38:14,185 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:16,186 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:18,186 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:18,208 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:38:18,363 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:38:18,364 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:38:18,366 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:38:20,187 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:22,188 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:23,462 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:38:24,189 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:26,189 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:28,190 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:28,708 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:38:30,191 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:32,192 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:33,297 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:38:33,364 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:38:33,364 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:38:33,367 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:38:34,192 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:34,342 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:38:36,193 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:38,194 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:39,635 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:38:40,195 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:42,196 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:44,197 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:44,930 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:38:46,198 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:48,198 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:48,364 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:38:48,364 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:38:48,366 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:38:50,030 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:38:50,200 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:52,200 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:54,201 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:55,398 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:38:56,202 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:38:58,202 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:00,203 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:00,643 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:39:02,204 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:03,298 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:39:03,364 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:39:03,364 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:39:03,366 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:39:04,205 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:06,032 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:39:06,206 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:08,207 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:10,207 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:11,404 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:39:12,208 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:14,209 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:16,210 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:16,792 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:39:18,211 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:18,365 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:39:18,366 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:39:18,369 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:39:20,211 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:22,118 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:39:22,213 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:24,213 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:26,214 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:27,474 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:39:28,215 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:30,215 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:32,216 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:32,896 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:39:33,298 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:39:33,364 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:39:33,365 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:39:33,367 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:39:34,217 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:36,218 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:38,219 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:38,314 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:39:40,219 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:42,220 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:43,586 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:39:44,221 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:46,221 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:48,222 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:48,364 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:39:48,365 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:39:48,367 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:39:49,096 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:39:50,223 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:52,224 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:39:54,366 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:39:59,367 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:40:03,300 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:40:03,365 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:40:03,366 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:40:03,369 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:40:04,644 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:40:09,645 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:40:14,646 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:40:18,365 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:40:18,366 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:40:18,406 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:40:20,549 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:40:25,550 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:40:30,551 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:40:33,301 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:40:33,366 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:40:33,366 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:40:33,406 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:40:35,592 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:40:40,593 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:40:45,594 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:40:48,366 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:40:48,367 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:40:48,410 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:40:51,567 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:40:56,568 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:41:01,569 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:41:03,305 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:41:03,366 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:41:03,367 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:41:03,410 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:41:06,614 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:41:11,615 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:41:16,616 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:41:18,366 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:41:18,367 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:41:18,410 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:41:22,583 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:41:27,584 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:41:32,585 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:41:33,303 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:41:33,367 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:41:33,367 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:41:33,410 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:41:37,628 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:41:42,629 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:41:47,630 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:41:48,367 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:41:48,367 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:41:48,410 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:41:53,592 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:41:58,593 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:42:03,305 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:42:03,367 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:42:03,368 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:42:03,410 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:42:03,620 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:42:08,621 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:42:13,623 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:42:18,367 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:42:18,368 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:42:18,410 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:42:18,624 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:42:23,625 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:42:28,626 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:42:33,306 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:42:33,368 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:42:33,368 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:42:33,410 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:42:33,642 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:42:38,643 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:42:43,644 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:42:48,368 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:42:48,369 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:42:48,410 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:42:49,551 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:42:54,552 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:42:59,553 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:43:03,307 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:43:03,368 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:43:03,369 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:43:03,410 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:43:04,623 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:43:09,625 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:43:14,626 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:43:18,368 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:43:18,369 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:43:18,410 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:43:20,612 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:43:25,613 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:43:30,614 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:43:33,308 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:43:33,369 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:43:33,369 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:43:33,410 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:43:36,609 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:43:41,610 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:43:46,611 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:43:48,369 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:43:48,369 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:43:48,410 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:43:52,579 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:43:57,580 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:44:02,581 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:44:03,310 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:44:03,369 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:44:03,370 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:44:03,410 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:44:07,628 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:44:12,629 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:44:17,630 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:44:18,369 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:44:18,370 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:44:18,410 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:44:23,585 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:44:28,586 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:44:33,311 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:44:33,369 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:44:33,370 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:44:33,410 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:44:33,705 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:44:38,706 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:44:43,707 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:44:48,370 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:44:48,370 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:44:48,410 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:44:49,577 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:44:54,578 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:44:59,580 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:45:03,312 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:45:03,370 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:45:03,371 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:45:03,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:45:04,623 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:45:09,624 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:45:14,625 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:45:18,370 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:45:18,371 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:45:18,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:45:20,619 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:45:25,620 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:45:30,622 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:45:33,313 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:45:33,371 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:45:33,371 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:45:33,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:45:36,587 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:45:41,588 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:45:46,589 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:45:48,371 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:45:48,371 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:45:48,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:45:52,574 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:45:57,575 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:46:02,576 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:46:03,314 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:46:03,371 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:46:03,372 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:46:03,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:46:09,247 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:46:14,248 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:46:18,371 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:46:18,372 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:46:18,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:46:19,733 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:46:24,735 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:46:29,736 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:46:33,316 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:46:33,371 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:46:33,372 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:46:33,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:46:35,588 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:46:40,589 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:46:45,590 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:46:48,372 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:46:48,372 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:46:48,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:46:50,653 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:46:55,654 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:47:00,656 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:47:03,317 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:47:03,372 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:47:03,373 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:47:03,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:47:06,623 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:47:11,624 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:47:16,625 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:47:18,372 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:47:18,373 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:47:18,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:47:22,586 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:47:27,587 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:47:32,588 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:47:33,318 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:47:33,373 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:47:33,373 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:47:33,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:47:37,632 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:47:42,633 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:47:47,634 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:47:48,373 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:47:48,373 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:47:48,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:47:53,548 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:47:58,549 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:48:03,319 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:48:03,373 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:48:03,374 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:48:03,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:48:03,652 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:48:08,653 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:48:13,654 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:48:18,373 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:48:18,374 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:48:18,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:48:19,573 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:48:24,574 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:48:29,575 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:48:33,335 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:48:33,373 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:48:33,374 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:48:33,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:48:34,619 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:48:39,620 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:48:44,621 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:48:48,374 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:48:48,374 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:48:48,414 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:48:49,622 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:48:54,623 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:48:59,624 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:49:03,322 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:49:03,374 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:49:03,375 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:49:03,418 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-20 17:49:03,418 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:49:04,633 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:49:09,634 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:49:14,635 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:49:18,374 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:49:18,375 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:49:18,418 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: keepalive
+2024-02-20 17:49:18,418 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:49:20,582 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:49:25,583 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:49:30,584 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:49:33,326 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:49:33,374 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: stop_status
+2024-02-20 17:49:33,375 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: stop_status
+2024-02-20 17:49:33,418 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:49:35,663 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:49:40,664 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:49:41,468 DEBUG   SenderThread:192754 [sender.py:send():382] send: exit
+2024-02-20 17:49:41,468 INFO    SenderThread:192754 [sender.py:send_exit():589] handling exit code: 0
+2024-02-20 17:49:41,469 INFO    SenderThread:192754 [sender.py:send_exit():591] handling runtime: 848
+2024-02-20 17:49:41,469 INFO    SenderThread:192754 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-20 17:49:41,470 INFO    SenderThread:192754 [sender.py:send_exit():597] send defer
+2024-02-20 17:49:41,470 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: defer
+2024-02-20 17:49:41,470 INFO    HandlerThread:192754 [handler.py:handle_request_defer():172] handle defer: 0
+2024-02-20 17:49:41,471 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: defer
+2024-02-20 17:49:41,471 INFO    SenderThread:192754 [sender.py:send_request_defer():613] handle sender defer: 0
+2024-02-20 17:49:41,471 INFO    SenderThread:192754 [sender.py:transition_state():617] send defer: 1
+2024-02-20 17:49:41,471 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: defer
+2024-02-20 17:49:41,471 INFO    HandlerThread:192754 [handler.py:handle_request_defer():172] handle defer: 1
+2024-02-20 17:49:41,472 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: defer
+2024-02-20 17:49:41,472 INFO    SenderThread:192754 [sender.py:send_request_defer():613] handle sender defer: 1
+2024-02-20 17:49:41,472 INFO    SenderThread:192754 [sender.py:transition_state():617] send defer: 2
+2024-02-20 17:49:41,472 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: defer
+2024-02-20 17:49:41,472 INFO    HandlerThread:192754 [handler.py:handle_request_defer():172] handle defer: 2
+2024-02-20 17:49:41,472 INFO    HandlerThread:192754 [system_monitor.py:finish():203] Stopping system monitor
+2024-02-20 17:49:41,473 DEBUG   SystemMonitor:192754 [system_monitor.py:_start():179] Finished system metrics aggregation loop
+2024-02-20 17:49:41,474 DEBUG   SystemMonitor:192754 [system_monitor.py:_start():183] Publishing last batch of metrics
+2024-02-20 17:49:41,474 INFO    HandlerThread:192754 [interfaces.py:finish():202] Joined cpu monitor
+2024-02-20 17:49:41,476 INFO    HandlerThread:192754 [interfaces.py:finish():202] Joined disk monitor
+2024-02-20 17:49:41,477 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_created():271] file/dir created: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/wandb-summary.json
+2024-02-20 17:49:41,599 INFO    HandlerThread:192754 [interfaces.py:finish():202] Joined gpu monitor
+2024-02-20 17:49:41,600 INFO    HandlerThread:192754 [interfaces.py:finish():202] Joined memory monitor
+2024-02-20 17:49:41,600 INFO    HandlerThread:192754 [interfaces.py:finish():202] Joined network monitor
+2024-02-20 17:49:41,601 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: defer
+2024-02-20 17:49:41,601 INFO    SenderThread:192754 [sender.py:send_request_defer():613] handle sender defer: 2
+2024-02-20 17:49:41,601 INFO    SenderThread:192754 [sender.py:transition_state():617] send defer: 3
+2024-02-20 17:49:41,601 DEBUG   SenderThread:192754 [sender.py:send():382] send: stats
+2024-02-20 17:49:41,601 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: defer
+2024-02-20 17:49:41,602 INFO    HandlerThread:192754 [handler.py:handle_request_defer():172] handle defer: 3
+2024-02-20 17:49:41,602 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: defer
+2024-02-20 17:49:41,602 INFO    SenderThread:192754 [sender.py:send_request_defer():613] handle sender defer: 3
+2024-02-20 17:49:41,602 INFO    SenderThread:192754 [sender.py:transition_state():617] send defer: 4
+2024-02-20 17:49:41,602 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: defer
+2024-02-20 17:49:41,602 INFO    HandlerThread:192754 [handler.py:handle_request_defer():172] handle defer: 4
+2024-02-20 17:49:41,603 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: defer
+2024-02-20 17:49:41,603 INFO    SenderThread:192754 [sender.py:send_request_defer():613] handle sender defer: 4
+2024-02-20 17:49:41,603 INFO    SenderThread:192754 [sender.py:transition_state():617] send defer: 5
+2024-02-20 17:49:41,603 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: defer
+2024-02-20 17:49:41,603 INFO    HandlerThread:192754 [handler.py:handle_request_defer():172] handle defer: 5
+2024-02-20 17:49:41,603 DEBUG   SenderThread:192754 [sender.py:send():382] send: summary
+2024-02-20 17:49:41,604 INFO    SenderThread:192754 [sender.py:_save_file():1403] saving file wandb-summary.json with policy end
+2024-02-20 17:49:41,604 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: defer
+2024-02-20 17:49:41,604 INFO    SenderThread:192754 [sender.py:send_request_defer():613] handle sender defer: 5
+2024-02-20 17:49:41,604 INFO    SenderThread:192754 [sender.py:transition_state():617] send defer: 6
+2024-02-20 17:49:41,604 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: defer
+2024-02-20 17:49:41,604 INFO    HandlerThread:192754 [handler.py:handle_request_defer():172] handle defer: 6
+2024-02-20 17:49:41,604 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: defer
+2024-02-20 17:49:41,605 INFO    SenderThread:192754 [sender.py:send_request_defer():613] handle sender defer: 6
+2024-02-20 17:49:41,605 INFO    SenderThread:192754 [sender.py:transition_state():617] send defer: 7
+2024-02-20 17:49:41,605 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: status_report
+2024-02-20 17:49:41,605 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: defer
+2024-02-20 17:49:41,605 INFO    HandlerThread:192754 [handler.py:handle_request_defer():172] handle defer: 7
+2024-02-20 17:49:41,605 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: defer
+2024-02-20 17:49:41,605 INFO    SenderThread:192754 [sender.py:send_request_defer():613] handle sender defer: 7
+2024-02-20 17:49:42,448 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-20 17:49:42,477 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/wandb-summary.json
+2024-02-20 17:49:43,906 INFO    SenderThread:192754 [sender.py:transition_state():617] send defer: 8
+2024-02-20 17:49:43,906 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: poll_exit
+2024-02-20 17:49:43,906 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: defer
+2024-02-20 17:49:43,907 INFO    HandlerThread:192754 [handler.py:handle_request_defer():172] handle defer: 8
+2024-02-20 17:49:43,907 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: defer
+2024-02-20 17:49:43,907 INFO    SenderThread:192754 [sender.py:send_request_defer():613] handle sender defer: 8
+2024-02-20 17:49:43,908 INFO    SenderThread:192754 [job_builder.py:build():296] Attempting to build job artifact
+2024-02-20 17:49:43,908 INFO    SenderThread:192754 [job_builder.py:_get_source_type():426] is repo sourced job
+2024-02-20 17:49:43,940 INFO    SenderThread:192754 [job_builder.py:build():402] adding wandb-job metadata file
+2024-02-20 17:49:43,958 INFO    SenderThread:192754 [sender.py:transition_state():617] send defer: 9
+2024-02-20 17:49:43,958 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: defer
+2024-02-20 17:49:43,958 DEBUG   SenderThread:192754 [sender.py:send():382] send: artifact
+2024-02-20 17:49:43,958 INFO    HandlerThread:192754 [handler.py:handle_request_defer():172] handle defer: 9
+2024-02-20 17:49:44,449 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-20 17:49:44,478 INFO    Thread-12 :192754 [dir_watcher.py:_on_file_modified():288] file/dir modified: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:49:44,890 INFO    SenderThread:192754 [sender.py:send_artifact():1494] sent artifact job-https___github.com_andrearafanelli_emotion-detection.git_main.py - {'id': 'QXJ0aWZhY3Q6NzI1OTIxODMw', 'state': 'COMMITTED', 'artifactSequence': {'id': 'QXJ0aWZhY3RDb2xsZWN0aW9uOjE0MTEzMjA1Mg==', 'latestArtifact': {'id': 'QXJ0aWZhY3Q6NzI1OTIxODMw', 'versionIndex': 0}}}
+2024-02-20 17:49:44,890 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: defer
+2024-02-20 17:49:44,890 INFO    SenderThread:192754 [sender.py:send_request_defer():613] handle sender defer: 9
+2024-02-20 17:49:44,890 INFO    SenderThread:192754 [dir_watcher.py:finish():358] shutting down directory watcher
+2024-02-20 17:49:45,479 INFO    SenderThread:192754 [dir_watcher.py:finish():388] scan: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files
+2024-02-20 17:49:45,480 INFO    SenderThread:192754 [dir_watcher.py:finish():402] scan save: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/requirements.txt requirements.txt
+2024-02-20 17:49:45,480 INFO    SenderThread:192754 [dir_watcher.py:finish():402] scan save: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/wandb-summary.json wandb-summary.json
+2024-02-20 17:49:45,481 INFO    SenderThread:192754 [dir_watcher.py:finish():402] scan save: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log output.log
+2024-02-20 17:49:45,485 INFO    SenderThread:192754 [dir_watcher.py:finish():402] scan save: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/config.yaml config.yaml
+2024-02-20 17:49:45,492 INFO    SenderThread:192754 [dir_watcher.py:finish():402] scan save: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/wandb-metadata.json wandb-metadata.json
+2024-02-20 17:49:45,493 INFO    SenderThread:192754 [sender.py:transition_state():617] send defer: 10
+2024-02-20 17:49:45,493 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: poll_exit
+2024-02-20 17:49:45,493 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: defer
+2024-02-20 17:49:45,498 INFO    HandlerThread:192754 [handler.py:handle_request_defer():172] handle defer: 10
+2024-02-20 17:49:45,502 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: defer
+2024-02-20 17:49:45,502 INFO    SenderThread:192754 [sender.py:send_request_defer():613] handle sender defer: 10
+2024-02-20 17:49:45,502 INFO    SenderThread:192754 [file_pusher.py:finish():175] shutting down file pusher
+2024-02-20 17:49:46,039 INFO    wandb-upload_0:192754 [upload_job.py:push():131] Uploaded file /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/requirements.txt
+2024-02-20 17:49:46,040 INFO    wandb-upload_1:192754 [upload_job.py:push():131] Uploaded file /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/wandb-summary.json
+2024-02-20 17:49:46,058 INFO    wandb-upload_3:192754 [upload_job.py:push():131] Uploaded file /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/config.yaml
+2024-02-20 17:49:46,064 INFO    wandb-upload_2:192754 [upload_job.py:push():131] Uploaded file /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/files/output.log
+2024-02-20 17:49:46,265 INFO    Thread-11 (_thread_body):192754 [sender.py:transition_state():617] send defer: 11
+2024-02-20 17:49:46,266 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: defer
+2024-02-20 17:49:46,266 INFO    HandlerThread:192754 [handler.py:handle_request_defer():172] handle defer: 11
+2024-02-20 17:49:46,266 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: defer
+2024-02-20 17:49:46,267 INFO    SenderThread:192754 [sender.py:send_request_defer():613] handle sender defer: 11
+2024-02-20 17:49:46,267 INFO    SenderThread:192754 [file_pusher.py:join():181] waiting for file pusher
+2024-02-20 17:49:46,267 INFO    SenderThread:192754 [sender.py:transition_state():617] send defer: 12
+2024-02-20 17:49:46,267 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: defer
+2024-02-20 17:49:46,267 INFO    HandlerThread:192754 [handler.py:handle_request_defer():172] handle defer: 12
+2024-02-20 17:49:46,268 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: defer
+2024-02-20 17:49:46,268 INFO    SenderThread:192754 [sender.py:send_request_defer():613] handle sender defer: 12
+2024-02-20 17:49:46,268 INFO    SenderThread:192754 [file_stream.py:finish():595] file stream finish called
+2024-02-20 17:49:46,451 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-20 17:49:46,771 INFO    SenderThread:192754 [file_stream.py:finish():599] file stream finish is done
+2024-02-20 17:49:46,771 INFO    SenderThread:192754 [sender.py:transition_state():617] send defer: 13
+2024-02-20 17:49:46,771 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: poll_exit
+2024-02-20 17:49:46,771 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: defer
+2024-02-20 17:49:46,772 INFO    HandlerThread:192754 [handler.py:handle_request_defer():172] handle defer: 13
+2024-02-20 17:49:46,772 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: defer
+2024-02-20 17:49:46,772 INFO    SenderThread:192754 [sender.py:send_request_defer():613] handle sender defer: 13
+2024-02-20 17:49:46,773 INFO    SenderThread:192754 [sender.py:transition_state():617] send defer: 14
+2024-02-20 17:49:46,773 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: defer
+2024-02-20 17:49:46,773 INFO    HandlerThread:192754 [handler.py:handle_request_defer():172] handle defer: 14
+2024-02-20 17:49:46,774 DEBUG   SenderThread:192754 [sender.py:send():382] send: final
+2024-02-20 17:49:46,774 DEBUG   SenderThread:192754 [sender.py:send():382] send: footer
+2024-02-20 17:49:46,774 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: defer
+2024-02-20 17:49:46,774 INFO    SenderThread:192754 [sender.py:send_request_defer():613] handle sender defer: 14
+2024-02-20 17:49:46,775 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-20 17:49:46,775 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: poll_exit
+2024-02-20 17:49:46,776 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: poll_exit
+2024-02-20 17:49:46,776 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: server_info
+2024-02-20 17:49:46,777 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: poll_exit
+2024-02-20 17:49:46,777 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: get_summary
+2024-02-20 17:49:46,778 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: server_info
+2024-02-20 17:49:46,778 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: sampled_history
+2024-02-20 17:49:46,781 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: internal_messages
+2024-02-20 17:49:46,783 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: job_info
+2024-02-20 17:49:46,941 DEBUG   SenderThread:192754 [sender.py:send_request():409] send_request: job_info
+2024-02-20 17:49:46,941 INFO    MainThread:192754 [wandb_run.py:_footer_history_summary_info():3857] rendering history
+2024-02-20 17:49:46,942 INFO    MainThread:192754 [wandb_run.py:_footer_history_summary_info():3889] rendering summary
+2024-02-20 17:49:46,942 INFO    MainThread:192754 [wandb_run.py:_footer_sync_info():3816] logging synced files
+2024-02-20 17:49:46,943 DEBUG   HandlerThread:192754 [handler.py:handle_request():146] handle_request: shutdown
+2024-02-20 17:49:46,943 INFO    HandlerThread:192754 [handler.py:finish():869] shutting down handler
+2024-02-20 17:49:47,783 INFO    WriterThread:192754 [datastore.py:close():296] close: /home/arafanelli/PycharmProjects/emoDetection/emotion-detection/wandb/run-20240220_173532-ovsdtgqh/run-ovsdtgqh.wandb
+2024-02-20 17:49:47,941 INFO    SenderThread:192754 [sender.py:finish():1572] shutting down sender
+2024-02-20 17:49:47,941 INFO    SenderThread:192754 [file_pusher.py:finish():175] shutting down file pusher
+2024-02-20 17:49:47,942 INFO    SenderThread:192754 [file_pusher.py:join():181] waiting for file pusher

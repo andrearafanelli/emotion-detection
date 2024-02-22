@@ -12,35 +12,29 @@ See the License for the specific language governing permissions and limitations 
 __author__ = 'Andrea Rafanelli'
 
 import argparse
+from configuration import Config
 from dataset import GetDataset
-from torch.utils.data import DataLoader, random_split
-import torch
-from torchvision import transforms
-from train import Trainer
 from run import RunExperiment
-from network import Model
+
 
 if __name__ == "__main__":
     parser = argparse.ArgumentParser()
     parser.add_argument('--mode', type=str, default='train', help='choose to train or test the model')
+    args = parser.parse_args()
+    config_param = Config
 
     print('>>>> Loading Dataset')
-    dataset = GetDataset(root_dir='/home/arafanelli/PycharmProjects/emoDetection/RAF-DB/DATASET', batch_size=64, num_workers=4)
-    train_loader, val_loader = dataset.get_data_loaders()
+    dataset = GetDataset(config_param)
+    train_loader, val_loader, test_loader = dataset.get_data_loaders()
     print('>>>> Dataset Loaded ')
 
+    experiment = RunExperiment('emotion', train_loader, val_loader, config_param)
 
-    experiment = RunExperiment('emotion', train_loader, val_loader)
+    #if args.mode == 'train':
+    experiment.run()
 
-    if args.mode == 'train':
-        experiment.run()
+    #elif args.mode == 'test':
+    #    experiment.load_best_model()
 
-    elif args.mode == 'test':
-        experiment.load_best_model()
-
-    else:
-        print("Invalid argument. Please enter 'train' or 'test'.")
-
-
-
-
+    #else:
+    #    print("Invalid argument. Please enter 'train' or 'test'.")

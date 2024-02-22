@@ -1,0 +1,192 @@
+{
+    "os": "Linux-6.5.0-17-generic-x86_64-with-glibc2.35",
+    "python": "3.11.2",
+    "heartbeatAt": "2024-02-22T13:04:01.885926",
+    "startedAt": "2024-02-22T13:04:01.006996",
+    "docker": null,
+    "cuda": null,
+    "args": [],
+    "state": "running",
+    "program": "/home/arafanelli/PycharmProjects/emoDetection/emotion-detection/main.py",
+    "codePathLocal": "main.py",
+    "codePath": "main.py",
+    "git": {
+        "remote": "https://github.com/andrearafanelli/emotion-detection.git",
+        "commit": "fc215dbd6c470ac5b93506dbaa5cc69c3592cb84"
+    },
+    "email": "andrea.rafanelli96@gmail.com",
+    "root": "/home/arafanelli/PycharmProjects/emoDetection/emotion-detection",
+    "host": "boncioli",
+    "username": "arafanelli",
+    "executable": "/home/arafanelli/PycharmProjects/emoDetection/.venv/bin/python",
+    "cpu_count": 14,
+    "cpu_count_logical": 28,
+    "cpu_freq": {
+        "current": 3589.0588928571424,
+        "min": 1200.0,
+        "max": 4642.857142857143
+    },
+    "cpu_freq_per_core": [
+        {
+            "current": 3577.811,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3742.952,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3903.724,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3609.516,
+            "min": 1200.0,
+            "max": 4700.0
+        },
+        {
+            "current": 3742.197,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3730.712,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3609.707,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3585.219,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3587.994,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3593.058,
+            "min": 1200.0,
+            "max": 4800.0
+        },
+        {
+            "current": 3609.536,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3585.23,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3583.092,
+            "min": 1200.0,
+            "max": 4800.0
+        },
+        {
+            "current": 3605.734,
+            "min": 1200.0,
+            "max": 4700.0
+        },
+        {
+            "current": 3577.566,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3742.967,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3890.279,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3609.509,
+            "min": 1200.0,
+            "max": 4700.0
+        },
+        {
+            "current": 3735.39,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3751.172,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3609.489,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3585.27,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3587.794,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3593.144,
+            "min": 1200.0,
+            "max": 4800.0
+        },
+        {
+            "current": 3609.562,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3585.3,
+            "min": 1200.0,
+            "max": 4600.0
+        },
+        {
+            "current": 3583.054,
+            "min": 1200.0,
+            "max": 4800.0
+        },
+        {
+            "current": 3605.507,
+            "min": 1200.0,
+            "max": 4700.0
+        }
+    ],
+    "disk": {
+        "/": {
+            "total": 3665.956069946289,
+            "used": 868.7409172058105
+        }
+    },
+    "gpu": "Quadro RTX 4000",
+    "gpu_count": 2,
+    "gpu_devices": [
+        {
+            "name": "Quadro RTX 4000",
+            "memory_total": 8370061312
+        },
+        {
+            "name": "Quadro RTX 4000",
+            "memory_total": 8361279488
+        }
+    ],
+    "memory": {
+        "total": 125.47242736816406
+    }
+}

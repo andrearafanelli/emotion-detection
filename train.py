@@ -18,7 +18,7 @@ import torch.nn.functional as F
 import sklearn
 from collections import defaultdict
 from tqdm.auto import tqdm
-from metrics import MetricsCalculator, Metrics, calculate_accuracy, Score
+from metrics import Metrics, calculate_accuracy, Score
 
 
 class Trainer:
