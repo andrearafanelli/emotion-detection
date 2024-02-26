@@ -11,9 +11,12 @@ See the License for the specific language governing permissions and limitations 
 
 __author__ = 'Andrea Rafanelli'
 
-from torch.utils.data import DataLoader, Dataset, random_split
+import torch
+from torch.utils.data import DataLoader, Dataset, random_split, Subset
 from torchvision import transforms, datasets
 import os
+from sklearn.model_selection import train_test_split
+import numpy as np
 
 
 class GetDataset(Dataset):
@@ -21,6 +24,7 @@ class GetDataset(Dataset):
         self.root_dir = configuration['root_dir']
         self.batch_size = configuration['batch_size']
         self.num_workers = configuration['num_workers']
+        self.seed = torch.Generator().manual_seed(0)
 
         normalize = transforms.Normalize(
             mean=[0.5752, 0.4495, 0.4012],
@@ -53,12 +57,19 @@ class GetDataset(Dataset):
             transform=val_transform
         )
 
-        val_size = int(0.8 * len(self.val_set))
-        test_size = len(self.val_set) - val_size
-
-        self.val_set, self.test_set = random_split(self.val_set, [val_size, test_size])
+        targets = self.val_set.targets
+        valid_idx, test_idx = train_test_split(np.arange(len(targets)), test_size=0.2, shuffle=True, stratify=targets)
+        self.valid_idx = torch.utils.data.SubsetRandomSampler(valid_idx)
+        self.test_idx = torch.utils.data.SubsetRandomSampler(test_idx)
 
     def get_data_loaders(self, shuffle_train=True):
+        # Define the number of samples you want to keep
+        #num_samples_to_keep = 100  # Adjust this number as needed
+
+        # Create a subset of the dataset with the desired number of samples
+        #subset_indices = range(num_samples_to_keep)
+        #train_loader = Subset(self.train_set, subset_indices)
+
         train_loader = DataLoader(
             self.train_set, batch_size=self.batch_size, shuffle=shuffle_train,
             num_workers=self.num_workers, pin_memory=True
@@ -66,12 +77,12 @@ class GetDataset(Dataset):
 
         val_loader = DataLoader(
             self.val_set, batch_size=self.batch_size, shuffle=False,
-            num_workers=self.num_workers, pin_memory=True
+            num_workers=self.num_workers, pin_memory=True, sampler=self.valid_idx
         )
 
         test_loader = DataLoader(
-            self.test_set, batch_size=self.batch_size, shuffle=False,
-            num_workers=self.num_workers, pin_memory=True
+            self.val_set, batch_size=self.batch_size, shuffle=False,
+            num_workers=self.num_workers, pin_memory=True, sampler=self.test_idx
         )
 
         return train_loader, val_loader, test_loader
