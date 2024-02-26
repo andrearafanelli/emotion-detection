@@ -14,6 +14,7 @@ __author__ = 'Andrea Rafanelli'
 import torch
 from train import Trainer
 from network import model
+from metrics import plot
 import copy
 import os
 import time
@@ -22,8 +23,9 @@ import wandb
 
 class RunExperiment:
 
-    def __init__(self, name, train, test, configuration):
+    def __init__(self, name, train, validation, test, configuration):
         self.train_loader = train
+        self.validation_loader = validation
         self.test_loader = test
         self.num_epochs = configuration['num_epochs']
         self.learning_rate = configuration['learning_rate']
@@ -36,7 +38,7 @@ class RunExperiment:
         self.best_epoch = 0
 
         self.device = torch.device("cuda:0" if torch.cuda.is_available() else "cpu")
-        self.model = torch.nn.DataParallel(model()).to(self.device)
+        self.model = model().to(self.device)
         print('>>>> Model initialized!')
         self.optimizer = torch.optim.SGD(self.model.parameters(), lr=self.learning_rate,
                                          momentum=self.momentum, weight_decay=self.weight_decay)
@@ -54,31 +56,39 @@ class RunExperiment:
             print('*' * 40)
             trainer = Trainer(self.model, self.optimizer, self.device)
             train_metrics = trainer.training(self.train_loader, 'Train')
-            test_metrics = trainer.testing(self.test_loader, 'Test')
+            valid_metrics = trainer.testing(self.validation_loader, 'Validation')
 
             epoch_metrics = {'Train Loss': train_metrics['Loss'], 'Train Accuracy': train_metrics['Accuracy'],
                              'Train F1': train_metrics['F1'], 'Train Precision': train_metrics['Precision'],
                              'Train Recall': train_metrics['Recall'],
-                             'Test Loss': test_metrics['Loss'], 'Test Accuracy': test_metrics['Accuracy'],
-                             'Test F1': test_metrics['F1'], 'Test Precision': test_metrics['Precision'],
-                             'Test Recall': test_metrics['Recall']
+                             'Validation Loss': valid_metrics['Loss'], 'Validation Accuracy': valid_metrics['Accuracy'],
+                             'Validation F1': valid_metrics['F1'], 'Validation Precision': valid_metrics['Precision'],
+                             'Validation Recall': valid_metrics['Recall']
                              }
             wandb.log(epoch_metrics)
             metrics_list.append(epoch_metrics)
 
-            if (test_metrics['Accuracy'] >= self.best_acc) and (test_metrics['Loss'] <= self.best_loss):
-                self.best_acc = test_metrics['Accuracy']
+            if (valid_metrics['Accuracy'] >= self.best_acc) and (valid_metrics['Loss'] <= self.best_loss):
+                self.best_acc = valid_metrics['Accuracy']
                 self.best_epoch = epoch
-                self.best_loss = test_metrics['Loss']
+                self.best_loss = valid_metrics['Loss']
                 self.best_model = copy.deepcopy(self.model.state_dict())
                 print(f'Best Accuracy: {self.best_acc:.4f} Epoch: {epoch + 1}')
                 print(">>>> Saving model..")
-                torch.save(self.best_model, f"{os.getcwd()}/models/{self.name}.pt")
+                torch.save(self.best_model, f"{os.getcwd()}/models/{self.name}.pth")
 
         metrics_df = pd.DataFrame(metrics_list)
         metrics_df.to_csv('experiment_metrics.csv', index=False)
 
     def load_best_model(self):
-        self.model.load_state_dict(torch.load(f"{os.getcwd()}/models/{self.expName}.pt"))
-        trainer = Tester(self.model, self.optimizer, self.device)
-        train_epoch = trainer.testing(self.val_loader, 'Validation')
+        if self.device.type == 'cpu':
+            state_dict = torch.load(f"{os.getcwd()}/models/{self.name}.pth", map_location='cpu')
+        else:
+            state_dict = torch.load(f"{os.getcwd()}/models/{self.name}.pth")
+
+        self.model = model().to(self.device)
+        self.model.load_state_dict(state_dict)
+        trainer = Trainer(self.model, self.optimizer, self.device)
+        test_metrics = trainer.testing(self.test_loader, 'Test')
+        plot(test_metrics)
+
