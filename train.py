@@ -19,6 +19,7 @@ import sklearn
 from collections import defaultdict
 from tqdm.auto import tqdm
 from metrics import Metrics, calculate_accuracy, Score
+import pickle
 
 
 class Trainer:
@@ -60,6 +61,7 @@ class Trainer:
     def testing(self, dataloaders, set_name):
         self.accuracy, self.loss, self.metrics_calculator = Metrics(), Metrics(), Score()
         criterion = torch.nn.CrossEntropyLoss()
+        results = []
 
         self.model.eval()
 
@@ -69,13 +71,19 @@ class Trainer:
                 targets = targets.to(self.device)
 
                 outputs = self.model(inputs)
-                loss = criterion(outputs, targets)
 
+                results.append(
+                    {'ID': inputs.imgs[0][0], 'Ground Truth': targets.item(), 'Prediction': outputs.item()})
+
+                loss = criterion(outputs, targets)
                 accuracy = calculate_accuracy(outputs, targets)
 
                 self.accuracy.average(accuracy, inputs)
                 self.loss.average(loss, inputs)
                 self.metrics_calculator.collect(targets, outputs)
+
+        with open('predictions.pkl', 'wb') as f:
+            pickle.dump(results, f)
 
         return self.metrics_calculator.calculate(self.accuracy.avg, self.loss.avg, set_name)
 
