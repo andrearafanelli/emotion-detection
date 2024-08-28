@@ -1,4 +1,11 @@
-# emotion-detection
+<h1 align="center"> Emotion Recognition </h1>
+<div>
+<img src=https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white>
+<img src=https://img.shields.io/badge/License-Apache_2.0-blue.svg?style=for-the-badge&logo=PyTorch>
+</div>
+
+<img src= images/emotions.jpg class="centering" >
+
 
 To download a Kaggle dataset using the Kaggle CLI, you can use the `kaggle datasets download` command. In your case, the dataset is hosted at `jonathanoheix/face-expression-recognition-dataset`. Here are the steps to download the dataset:
 
